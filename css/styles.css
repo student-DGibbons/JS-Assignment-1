@@ -1,0 +1,122 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: #FAF9F6;
+    color: #3b444b;
+}
+
+h1, main{
+    padding: 0px 20px;
+}
+
+/* Setting up a div-container to serve as a grid with 5 columns
+(one for each section), then setting the grid areas */
+.container{
+    /* Setting width to take up the full screen
+     and height to be 100% viewport height */
+    width: 100%;
+    height: 100vh;
+    border: 3px black solid;
+    grid-gap: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: 
+    'section1 section2 section3 section4 section5';
+    /* Centring everything */
+    align-items: center;
+    justify-items: center;
+}
+
+h3, p{
+    font-size: 1.2rem;
+}
+
+/* Making each section a grid with 8 rows (1 heading and 7 options) and
+making them take up their entire section */
+section{
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    height: 100%;
+    width: 100%;
+}
+
+/* Centring the content and using display flex to make sure everything is responsive */
+section div{
+    border: 3px solid black;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+/* Selecting every div in the sections besides the first (i.e., h3 element) */
+section > div:not(:first-child):hover {
+    color: red;
+  }
+
+#section1{
+    grid-area: section1;
+    background-color: lightblue;
+}
+
+#section2{
+    grid-area: section2;
+    background-color: burlywood;
+}
+
+#section3{
+    grid-area: section3;
+    background-color: coral;
+    
+}
+
+#section4{
+    grid-area: section4;
+    background-color: gold;
+    
+}
+
+#section5{
+    grid-area: section5;
+    background-color: aliceblue;
+}
+
+/* Styling the output box */
+.output{
+    margin: 10px 0px;
+    padding: 10px;
+    border: 6px solid black;
+    width: auto;
+    height: 20vh;
+    background-color: bisque;
+
+    /* Making the output box a grid */
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    'output-heading' 'para' 'para' 'para'
+    'output-heading' 'button' 'button' 'button';
+}
+
+.output h3{
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    align-self: baseline;
+    justify-self: center;
+    font-size: 2rem;
+}
+
+.output p{
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+}
+
+.output button{
+    grid-column: 2;
+    grid-row: 2;
+    align-self: center;
+    padding: 5px 0px;
+    border:#3b444b solid 4px;
+    font-size: 1.4rem;
+}
