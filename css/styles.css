@@ -93,9 +93,6 @@ section > div:not(:first-child):hover {
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 1fr 1fr;
-    /* grid-template-areas: 
-    'output-heading' 'para' 'para' 'para'
-    'empty' 'button' 'button' 'button'; */
 }
 
 .output h3{
@@ -119,4 +116,8 @@ section > div:not(:first-child):hover {
     padding: 5px 0px;
     border:#3b444b solid 4px;
     font-size: 1.4rem;
+}
+
+.output button:hover{
+    color: red;
 }
